@@ -1,0 +1,23 @@
+[db.seed]
+enabled = true
+sql_paths = ["./base_datos_mapket.sql"]
+
+[functions.invitar-empleado]
+entrypoint = "./functions/invitar-empleado/index.js"
+verify_jwt = true
+
+[functions.crear-producto]
+entrypoint = "./functions/crear-producto/index.js"
+verify_jwt = true
+
+[functions.eliminar-producto]
+entrypoint = "./functions/eliminar-producto/index.js"
+verify_jwt = true
+
+[functions.eliminar-empleado]
+entrypoint = "./functions/eliminar-empleado/index.js"
+verify_jwt = true
+
+[functions.completar-alta-empleado]
+entrypoint = "./functions/completar-alta-empleado/index.js"
+verify_jwt = true

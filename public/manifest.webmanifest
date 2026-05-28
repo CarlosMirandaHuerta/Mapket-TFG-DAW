@@ -1,0 +1,19 @@
+{
+  "name": "Mapket",
+  "short_name": "Mapket",
+  "description": "Mapa interactivo para encontrar productos dentro del supermercado.",
+  "start_url": "/s/tienda-demo?from=entrada",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f2ea",
+  "theme_color": "#1f6f4a",
+  "icons": [
+    {
+      "src": "/mapket-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
