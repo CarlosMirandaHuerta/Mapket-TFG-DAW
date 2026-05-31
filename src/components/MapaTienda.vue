@@ -40,7 +40,12 @@ defineEmits(['seleccionar'])
         type="button"
         @click="$emit('seleccionar', seccion.codigo)"
       >
-        <span class="titulo-zona">{{ seccion.etiqueta }}</span>
+        <span
+          class="titulo-zona"
+          :class="{ 'texto-congelados': seccion.etiqueta === 'Congelados' }"
+        >
+          {{ seccion.etiqueta }}
+        </span>
         <span class="pasillo-zona">{{ seccion.pasillo }}</span>
         <span v-if="seccion.codigo === codigoActual" class="etiqueta-zona">Estás aquí</span>
         <span
@@ -75,6 +80,13 @@ defineEmits(['seleccionar'])
   margin-bottom: 0;
 }
 
+:deep(.titulo-zona),
+:deep(.pasillo-zona) {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
 @media (max-width: 520px) {
   .cabecera-mapa {
     align-items: flex-start;
@@ -83,6 +95,25 @@ defineEmits(['seleccionar'])
 
   .titulo-mapa {
     font-size: 0.98rem;
+  }
+
+  :deep(.zona-tienda) {
+    padding: 8px;
+  }
+
+  :deep(.titulo-zona) {
+    font-size: 0.8rem;
+    line-height: 1.12;
+  }
+
+  :deep(.titulo-zona.texto-congelados) {
+    font-size: 0.72rem;
+  }
+
+  :deep(.pasillo-zona) {
+    font-size: 0.64rem;
+    line-height: 1.12;
+    white-space: nowrap;
   }
 }
 </style>
