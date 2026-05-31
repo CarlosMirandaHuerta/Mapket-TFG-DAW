@@ -82,10 +82,6 @@ watch(codigoSeccionActual, () => {
   codigoSeccionSeleccionada.value = seccionActual.value.codigo
 })
 
-const totalCategories = computed(() => {
-  return secciones.value.reduce((total, seccion) => total + seccion.categorias.length, 0)
-})
-
 const categorias = computed(() => {
   return ['Todas', ...new Set(productos.value.map((producto) => producto.categoria))]
 })
@@ -142,11 +138,6 @@ const seleccionarCategoria = (categoria) => {
         <span>Buscar producto</span>
         <input v-model="search" type="search" placeholder="Yogures, arroz, detergente" />
       </label>
-
-      <div class="ubicacion-chip">
-        <span>Estás en&nbsp;</span>
-        <strong>{{ seccionActual.etiqueta }}</strong>
-      </div>
     </section>
 
     <section class="filtro-categorias" aria-label="Filtros por categoría">
