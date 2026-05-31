@@ -201,15 +201,15 @@ const seleccionarCategoria = (categoria) => {
 .marca-tienda {
   display: flex;
   min-width: 0;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
 .icono-mapket {
   flex: 0 0 auto;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
 }
 
 .marca-tienda h1 {
@@ -226,9 +226,9 @@ const seleccionarCategoria = (categoria) => {
   }
 
   .icono-mapket {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
   }
 }
 </style>
