@@ -18,7 +18,9 @@ defineEmits(['seleccionar'])
 </script>
 
 <template>
-  <section class="mapa-tienda" aria-label="Mapa interactivo del supermercado">
+  <section class="mapa-tienda" aria-labelledby="mapa-tienda-title">
+    <h2 id="mapa-tienda-title" class="titulo-mapa">Mapa interactivo</h2>
+
     <div class="leyenda-mapa" aria-hidden="true">
       <span><i class="punto-leyenda esta-seleccionado"></i>Sección seleccionada</span>
     </div>
