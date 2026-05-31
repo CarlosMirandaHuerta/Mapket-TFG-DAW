@@ -217,6 +217,10 @@ const seleccionarCategoria = (categoria) => {
   box-shadow: 0 10px 22px rgb(31 111 74 / 24%);
 }
 
+:deep(.lista-resultados) {
+  max-height: 220px;
+}
+
 @media (max-width: 520px) {
   .panel-superior {
     align-items: flex-start;
@@ -251,6 +255,10 @@ const seleccionarCategoria = (categoria) => {
     margin-left: 8px;
     padding: 0 12px;
     font-size: 0.78rem;
+  }
+
+  :deep(.lista-resultados) {
+    max-height: 170px;
   }
 }
 </style>
