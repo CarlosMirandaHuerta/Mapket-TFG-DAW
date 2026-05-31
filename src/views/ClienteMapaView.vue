@@ -40,10 +40,6 @@ const codigoTienda = computed(() => {
   return typeof value === 'string' ? value : CODIGO_TIENDA_PREDETERMINADA
 })
 
-const nombreTienda = computed(() => {
-  return tienda.value.nombre ?? codigoTienda.value.replaceAll('-', ' ')
-})
-
 const codigoSeccionActual = computed(() => {
   const value = route.query.from
   return typeof value === 'string' ? value : 'entrada'
@@ -131,9 +127,12 @@ const seleccionarCategoria = (categoria) => {
 <template>
   <main class="mobile-shell">
     <section class="panel-superior" aria-labelledby="tienda-title">
-      <div>
-        <p class="texto-superior">Mapket</p>
-        <h1 id="tienda-title">{{ nombreTienda }}</h1>
+      <div class="marca-tienda">
+        <img class="icono-mapket" src="/mapket-icon.svg" alt="" aria-hidden="true" />
+        <div>
+          <p class="texto-superior">Mapket</p>
+          <h1 id="tienda-title">Supermercado Demo</h1>
+        </div>
       </div>
       <RouterLink class="admin-link" to="/admin">Equipo</RouterLink>
     </section>
@@ -197,3 +196,39 @@ const seleccionarCategoria = (categoria) => {
     />
   </main>
 </template>
+
+<style scoped>
+.marca-tienda {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.icono-mapket {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.marca-tienda h1 {
+  text-transform: none;
+}
+
+@media (max-width: 520px) {
+  .panel-superior {
+    align-items: flex-start;
+  }
+
+  .marca-tienda {
+    gap: 10px;
+  }
+
+  .icono-mapket {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+}
+</style>
