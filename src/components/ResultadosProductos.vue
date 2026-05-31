@@ -22,7 +22,7 @@ const etiquetaEstado = {
 <template>
   <section class="resultados-productos" aria-labelledby="resultados-productos-title">
     <div class="cabecera-resultados-productos">
-      <h2 id="resultados-productos-title">Productos</h2>
+      <h2 id="resultados-productos-title">Lista de productos</h2>
       <span>{{ productos.length }} resultados</span>
     </div>
 

@@ -18,9 +18,13 @@ defineEmits(['seleccionar'])
 </script>
 
 <template>
-  <section class="mapa-tienda" aria-label="Mapa interactivo del supermercado">
-    <div class="leyenda-mapa" aria-hidden="true">
-      <span><i class="punto-leyenda esta-seleccionado"></i>Sección seleccionada</span>
+  <section class="mapa-tienda" aria-labelledby="mapa-tienda-title">
+    <div class="cabecera-mapa">
+      <h2 id="mapa-tienda-title" class="titulo-mapa">Mapa interactivo</h2>
+
+      <div class="leyenda-mapa" aria-hidden="true">
+        <span><i class="punto-leyenda esta-seleccionado"></i>Sección seleccionada</span>
+      </div>
     </div>
 
     <div class="plano-tienda">
@@ -49,3 +53,36 @@ defineEmits(['seleccionar'])
     </div>
   </section>
 </template>
+
+<style scoped>
+.cabecera-mapa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.titulo-mapa {
+  margin: 0;
+  color: #17211c;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.cabecera-mapa :deep(.leyenda-mapa) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 520px) {
+  .cabecera-mapa {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .titulo-mapa {
+    font-size: 0.98rem;
+  }
+}
+</style>
