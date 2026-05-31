@@ -167,21 +167,6 @@ const seleccionarCategoria = (categoria) => {
       @seleccionar="seleccionarProducto"
     />
 
-    <section class="resumen-tienda" aria-label="Resumen de tienda">
-      <div>
-        <strong>{{ secciones.length }}</strong>
-        <span>secciones</span>
-      </div>
-      <div>
-        <strong>{{ totalCategories }}</strong>
-        <span>categorías</span>
-      </div>
-      <div>
-        <strong>{{ seccionSeleccionada.pasillo }}</strong>
-        <span>selección</span>
-      </div>
-    </section>
-
     <MapaTienda
       :secciones="secciones"
       :codigo-actual="seccionActual.codigo"
