@@ -40,7 +40,12 @@ defineEmits(['seleccionar'])
         type="button"
         @click="$emit('seleccionar', seccion.codigo)"
       >
-        <span class="titulo-zona">{{ seccion.etiqueta }}</span>
+        <span
+          class="titulo-zona"
+          :class="{ 'texto-congelados': seccion.etiqueta === 'Congelados' }"
+        >
+          {{ seccion.etiqueta }}
+        </span>
         <span class="pasillo-zona">{{ seccion.pasillo }}</span>
         <span v-if="seccion.codigo === codigoActual" class="etiqueta-zona">Estás aquí</span>
         <span
@@ -99,6 +104,10 @@ defineEmits(['seleccionar'])
   :deep(.titulo-zona) {
     font-size: 0.8rem;
     line-height: 1.12;
+  }
+
+  :deep(.titulo-zona.texto-congelados) {
+    font-size: 0.72rem;
   }
 
   :deep(.pasillo-zona) {
