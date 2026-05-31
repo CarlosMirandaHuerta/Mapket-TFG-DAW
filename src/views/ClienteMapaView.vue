@@ -40,10 +40,6 @@ const codigoTienda = computed(() => {
   return typeof value === 'string' ? value : CODIGO_TIENDA_PREDETERMINADA
 })
 
-const nombreTienda = computed(() => {
-  return tienda.value.nombre ?? codigoTienda.value.replaceAll('-', ' ')
-})
-
 const codigoSeccionActual = computed(() => {
   const value = route.query.from
   return typeof value === 'string' ? value : 'entrada'
@@ -131,9 +127,12 @@ const seleccionarCategoria = (categoria) => {
 <template>
   <main class="mobile-shell">
     <section class="panel-superior" aria-labelledby="tienda-title">
-      <div>
-        <p class="texto-superior">Mapket</p>
-        <h1 id="tienda-title">{{ nombreTienda }}</h1>
+      <div class="marca-tienda">
+        <img class="icono-mapket" src="/mapket-icon.svg" alt="" aria-hidden="true" />
+        <div>
+          <p class="texto-superior">Mapket</p>
+          <h1 id="tienda-title">Supermercado Demo</h1>
+        </div>
       </div>
       <RouterLink class="admin-link" to="/admin">Equipo</RouterLink>
     </section>
@@ -197,3 +196,85 @@ const seleccionarCategoria = (categoria) => {
     />
   </main>
 </template>
+
+<style scoped>
+.marca-tienda {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 12px;
+  margin-left: 8px;
+}
+
+.icono-mapket {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+}
+
+.marca-tienda h1 {
+  font-size: 1.45rem;
+  line-height: 1.08;
+  text-transform: none;
+}
+
+.admin-link {
+  flex: 0 0 auto;
+  min-height: 40px;
+  margin-right: 8px;
+  border: 1px solid #1f6f4a;
+  border-radius: 999px;
+  padding: 0 16px;
+  color: #ffffff;
+  background: #1f6f4a;
+  box-shadow: 0 8px 18px rgb(31 111 74 / 18%);
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.admin-link:hover {
+  transform: translateY(-1px);
+  background: #175236;
+  box-shadow: 0 10px 22px rgb(31 111 74 / 24%);
+}
+
+@media (max-width: 520px) {
+  .panel-superior {
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .marca-tienda {
+    flex: 1 1 auto;
+    gap: 9px;
+    margin-left: 0;
+  }
+
+  .texto-superior {
+    margin-bottom: 4px;
+    font-size: 0.7rem;
+  }
+
+  .icono-mapket {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+  }
+
+  .marca-tienda h1 {
+    font-size: 1.08rem;
+    line-height: 1.12;
+  }
+
+  .admin-link {
+    min-height: 34px;
+    margin-right: 0;
+    margin-left: 8px;
+    padding: 0 12px;
+    font-size: 0.78rem;
+  }
+}
+</style>
