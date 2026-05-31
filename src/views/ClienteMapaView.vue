@@ -203,6 +203,7 @@ const seleccionarCategoria = (categoria) => {
   min-width: 0;
   align-items: flex-start;
   gap: 12px;
+  margin-left: 8px;
 }
 
 .icono-mapket {
@@ -221,37 +222,59 @@ const seleccionarCategoria = (categoria) => {
 .admin-link {
   flex: 0 0 auto;
   min-height: 40px;
+  margin-right: 8px;
   border: 1px solid #1f6f4a;
   border-radius: 999px;
   padding: 0 16px;
   color: #ffffff;
   background: #1f6f4a;
   box-shadow: 0 8px 18px rgb(31 111 74 / 18%);
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.admin-link:hover {
+  transform: translateY(-1px);
+  background: #175236;
+  box-shadow: 0 10px 22px rgb(31 111 74 / 24%);
 }
 
 @media (max-width: 520px) {
   .panel-superior {
     align-items: flex-start;
+    gap: 18px;
   }
 
   .marca-tienda {
-    gap: 10px;
+    flex: 1 1 auto;
+    gap: 9px;
+    margin-left: 0;
+  }
+
+  .texto-superior {
+    margin-bottom: 4px;
+    font-size: 0.7rem;
   }
 
   .icono-mapket {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
   }
 
   .marca-tienda h1 {
-    font-size: 1.28rem;
+    font-size: 1.08rem;
+    line-height: 1.12;
   }
 
   .admin-link {
-    min-height: 36px;
-    padding: 0 13px;
-    font-size: 0.82rem;
+    min-height: 34px;
+    margin-right: 0;
+    margin-left: 8px;
+    padding: 0 12px;
+    font-size: 0.78rem;
   }
 }
 </style>
