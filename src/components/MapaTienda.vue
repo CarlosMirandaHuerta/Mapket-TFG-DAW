@@ -51,3 +51,19 @@ defineEmits(['seleccionar'])
     </div>
   </section>
 </template>
+
+<style scoped>
+.titulo-mapa {
+  margin: 0 0 8px;
+  color: #17211c;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+@media (max-width: 520px) {
+  .titulo-mapa {
+    font-size: 0.98rem;
+  }
+}
+</style>
