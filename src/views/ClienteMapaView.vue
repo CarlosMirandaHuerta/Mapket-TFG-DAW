@@ -142,11 +142,6 @@ const seleccionarCategoria = (categoria) => {
         <span>Buscar producto</span>
         <input v-model="search" type="search" placeholder="Yogures, arroz, detergente" />
       </label>
-
-      <div class="ubicacion-chip">
-        <span>Estás en&nbsp;</span>
-        <strong>{{ seccionActual.etiqueta }}</strong>
-      </div>
     </section>
 
     <section class="filtro-categorias" aria-label="Filtros por categoría">
