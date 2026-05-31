@@ -213,6 +213,8 @@ const seleccionarCategoria = (categoria) => {
 }
 
 .marca-tienda h1 {
+  font-size: 1.45rem;
+  line-height: 1.08;
   text-transform: none;
 }
 
@@ -229,6 +231,10 @@ const seleccionarCategoria = (categoria) => {
     width: 46px;
     height: 46px;
     border-radius: 12px;
+  }
+
+  .marca-tienda h1 {
+    font-size: 1.28rem;
   }
 }
 </style>
