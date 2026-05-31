@@ -82,10 +82,6 @@ watch(codigoSeccionActual, () => {
   codigoSeccionSeleccionada.value = seccionActual.value.codigo
 })
 
-const totalCategories = computed(() => {
-  return secciones.value.reduce((total, seccion) => total + seccion.categorias.length, 0)
-})
-
 const categorias = computed(() => {
   return ['Todas', ...new Set(productos.value.map((producto) => producto.categoria))]
 })
@@ -161,21 +157,6 @@ const seleccionarCategoria = (categoria) => {
       :id-producto-seleccionado="idProductoSeleccionado"
       @seleccionar="seleccionarProducto"
     />
-
-    <section class="resumen-tienda" aria-label="Resumen de tienda">
-      <div>
-        <strong>{{ secciones.length }}</strong>
-        <span>secciones</span>
-      </div>
-      <div>
-        <strong>{{ totalCategories }}</strong>
-        <span>categorías</span>
-      </div>
-      <div>
-        <strong>{{ seccionSeleccionada.pasillo }}</strong>
-        <span>selección</span>
-      </div>
-    </section>
 
     <MapaTienda
       :secciones="secciones"
