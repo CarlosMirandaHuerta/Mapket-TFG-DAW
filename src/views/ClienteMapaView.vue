@@ -218,6 +218,17 @@ const seleccionarCategoria = (categoria) => {
   text-transform: none;
 }
 
+.admin-link {
+  flex: 0 0 auto;
+  min-height: 40px;
+  border: 1px solid #1f6f4a;
+  border-radius: 999px;
+  padding: 0 16px;
+  color: #ffffff;
+  background: #1f6f4a;
+  box-shadow: 0 8px 18px rgb(31 111 74 / 18%);
+}
+
 @media (max-width: 520px) {
   .panel-superior {
     align-items: flex-start;
@@ -235,6 +246,12 @@ const seleccionarCategoria = (categoria) => {
 
   .marca-tienda h1 {
     font-size: 1.28rem;
+  }
+
+  .admin-link {
+    min-height: 36px;
+    padding: 0 13px;
+    font-size: 0.82rem;
   }
 }
 </style>
